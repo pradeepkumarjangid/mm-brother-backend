@@ -9,10 +9,10 @@ exports.createCity = async (req, res) => {
 
     const { cityName } = req?.body;
 
-    const mainImage = req.files["mainImage"][0].path;
+    const mainImage = req.files["mainImage"]?.[0].path;
 
     const images = req.files["images"]
-      ? req.files["images"].map(file => file.path)
+      ? req?.files["images"].map(file => file.path)
       : [];
 
     const city = await City.create({
