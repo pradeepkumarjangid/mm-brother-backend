@@ -70,7 +70,7 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    let Email = email.toLowercase()
+    let Email = email.toLowerCase()
     // 🔹 Required Fields Check
     if (!email || !password) {
       return res.status(400).json({
