@@ -79,7 +79,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    const user = await User.findOne({ Email });
+    const user = await User.findOne({email: Email });
     if (!user) {
       return res.status(401).json({
         success: false,
