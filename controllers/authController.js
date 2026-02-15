@@ -70,6 +70,7 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    let Email = email.toLowercase()
     // 🔹 Required Fields Check
     if (!email || !password) {
       return res.status(400).json({
@@ -78,7 +79,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ Email });
     if (!user) {
       return res.status(401).json({
         success: false,
