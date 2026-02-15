@@ -74,4 +74,3 @@ temp/
 # Uncomment if you don't want to push lock files
 # package-lock.json
 # yarn.lock
-uploads/
